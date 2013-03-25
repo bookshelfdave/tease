@@ -3,6 +3,8 @@ tease
 
 [Grammar](https://raw.github.com/metadave/tease/master/src/main/java/org/metadave/tease/Tease.g4)
 
+[Parser tests](https://github.com/metadave/tease/blob/master/src/main/java/org/metadave/tease/Tease.java)
+
 # Sample M/R queries
 
 ```
