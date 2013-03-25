@@ -1,4 +1,4 @@
 antlr:
-	java -jar /usr/local/lib/antlr-4.0-complete.jar -o ./ -listener -no-visitor -package com.metadave.tease  ./src/main/java/org/metadave/tease/Tease.g4
+	java -jar /usr/local/lib/antlr-4.0-complete.jar -o ./ -listener -no-visitor -package org.metadave.tease  ./src/main/java/org/metadave/tease/Tease.g4
 
 
