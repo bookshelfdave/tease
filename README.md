@@ -10,13 +10,13 @@ tease
 ```
 query using bucket "Foo";
 
-
+// foo being a simple json element
 query using bucket "Foo" filter foo > 1;
 
 
 query using keys ["Foo", "Bar", "Baz"] filter foo > 1;
 
-
+// kvc encoding
 query using bucket "Foo" filter foo > 1 and foo.@bar < 100;
 
 
@@ -24,7 +24,7 @@ query using bucket "Foo"
     with index "test_bin" from "A" to "Z" 
     filter foo > 1 and foo.@bar < 100;
 
-
+// extracted values use a $ prefix
 query using bucket "Foo" 
       filter foo > 1 and foo.@bar < 100 
       extract $tempsum = foo.@bar;
@@ -37,6 +37,7 @@ query using bucket "Foo"
       extract $tempsum = foo.@bar;
 
 
+// results in the aggregate phase don't need $'s
 query using bucket "Foo" 
       filter foo > 1 
              and bar defined 
