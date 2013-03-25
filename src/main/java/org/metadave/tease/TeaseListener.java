@@ -57,4 +57,7 @@ public interface TeaseListener extends ParseTreeListener {
 
 	void enterFilter(TeaseParser.FilterContext ctx);
 	void exitFilter(TeaseParser.FilterContext ctx);
+
+	void enterQuery_index(TeaseParser.Query_indexContext ctx);
+	void exitQuery_index(TeaseParser.Query_indexContext ctx);
 }

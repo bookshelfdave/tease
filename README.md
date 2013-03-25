@@ -11,24 +11,30 @@ tease
 query using bucket "Foo";
 
 
-query using bucket "Foo" 
-	filter foo > 1;
+query using bucket "Foo" filter foo > 1;
+
+
+query using keys ["Foo", "Bar", "Baz"] filter foo > 1;
+
+
+query using bucket "Foo" filter foo > 1 and foo.@bar < 100;
 
 
 query using bucket "Foo" 
-	filter foo > 1 and foo.@bar < 100;
+    with index "test_int" from "A" to "Z" 
+    filter foo > 1 and foo.@bar < 100;
 
 
 query using bucket "Foo" 
-    filter foo > 1 and foo.@bar < 100 
-    extract $tempsum = foo.@bar;
+      filter foo > 1 and foo.@bar < 100 
+      extract $tempsum = foo.@bar;
 
 
 query using bucket "Foo" 
-    filter foo > 1 
-    		and bar defined 
-    		and foo.@bar < 100 
-    extract $tempsum = foo.@bar;
+      filter foo > 1 
+             and bar defined 
+             and foo.@bar < 100 
+      extract $tempsum = foo.@bar;
 
 
 query using bucket "Foo" 

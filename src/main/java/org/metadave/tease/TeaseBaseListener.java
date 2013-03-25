@@ -61,6 +61,9 @@ public class TeaseBaseListener implements TeaseListener {
 	@Override public void enterFilter(TeaseParser.FilterContext ctx) { }
 	@Override public void exitFilter(TeaseParser.FilterContext ctx) { }
 
+	@Override public void enterQuery_index(TeaseParser.Query_indexContext ctx) { }
+	@Override public void exitQuery_index(TeaseParser.Query_indexContext ctx) { }
+
 	@Override public void enterEveryRule(ParserRuleContext ctx) { }
 	@Override public void exitEveryRule(ParserRuleContext ctx) { }
 	@Override public void visitTerminal(TerminalNode node) { }

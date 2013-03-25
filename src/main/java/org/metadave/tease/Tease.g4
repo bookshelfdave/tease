@@ -10,7 +10,9 @@ query_source_keylist: KEYS LSQUARE keylist? RSQUARE;
 
 keylist: STRING (COMMA STRING)*;
 
-query_source_bucket: BUCKET bucketName=STRING (WITH INDEX indexName=STRING)?;
+query_source_bucket: BUCKET bucketName=STRING query_index?;
+
+query_index: WITH INDEX indexName=STRING ((FROM STRING TO STRING) | (VALUE STRING));
 
 
 /* filtering */
@@ -57,6 +59,9 @@ AND:           'and';
 WITH:          'with';
 DEFINED:       'defined';
 NOT:           'not';
+FROM:          'from';
+TO:            'to';
+VALUE:         'value';
 COMMA:         ',';
 LSQUARE:       '[';
 RSQUARE:       ']';
