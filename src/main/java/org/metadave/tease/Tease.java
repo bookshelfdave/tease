@@ -49,7 +49,7 @@ public class Tease {
                 "query using bucket \"Foo\" filter foo > 1 and foo.@bar < 100;",
 
                 "query using bucket \"Foo\" \n" +
-                "    with index \"test_int\" from \"A\" to \"Z\" \n" +
+                "    with index \"test_bin\" from \"A\" to \"Z\" \n" +
                 "    filter foo > 1 and foo.@bar < 100;",
 
                 "query using bucket \"Foo\" \n" +
