@@ -21,7 +21,7 @@ query using bucket "Foo" filter foo > 1 and foo.@bar < 100;
 
 
 query using bucket "Foo" 
-    with index "test_int" from "A" to "Z" 
+    with index "test_bin" from "A" to "Z" 
     filter foo > 1 and foo.@bar < 100;
 
 
