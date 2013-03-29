@@ -60,3 +60,6 @@ query using bucket "Foo"
       aggregate sum = $tempsum 
              and x = foo.@bar;
 ```
+
+
+Nested queries
