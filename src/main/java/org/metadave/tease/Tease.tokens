@@ -27,8 +27,8 @@ GT=23
 EQ=29
 KEYS=4
 COMMENT=35
-EXTRACT=6
 FROM=13
+EXTRACT=6
 DOT=19
 AGGREGATE=7
 STRING=33
@@ -53,8 +53,8 @@ WITH=10
 'to'=14
 '<='=26
 '!='=28
-'<'=25
 'keys'=4
+'<'=25
 'not'=12
 ':'=21
 'defined'=11
@@ -62,5 +62,5 @@ WITH=10
 ','=16
 'using'=2
 ']'=18
-'query'=1
 'from'=13
+'query'=1

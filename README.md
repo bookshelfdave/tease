@@ -7,6 +7,56 @@ tease
 
 # Sample M/R queries
 
+
+#### Types 
+Ints, Strings, Boolean, Floats
+
+
+## Source Phase
+	query using
+	 bucket "Foo" and keys ["Foo", "Bar", "Baz"="X"]
+
+	query using
+	 bucket "Foo" with keys ["Foo", "Bar", "Baz"=1] and
+	 bucket "Bar" with keys ["Foo", "Bar", "Baz"=true, "FooBar"=1.25]
+
+	query using
+	 bucket "Foo" with index "myindex_bin" from "A" to "Z"
+
+	query using
+	 bucket "Foo" with index "myindex_bin" = "Value"
+
+	query using riak_search…
+
+
+	// regular mr
+	({"inputs":"mybucket",...})
+	[Bucket,Key]
+	[Bucket,Key, Data]
+
+
+	// riak search
+	"query":"foo OR bar", 
+	 "filter":"field2:baz"
+
+
+	// search
+	 "inputs":{
+       "bucket":"mybucket",
+       "index":"field1_bin",
+       "key":"val3"
+	  },
+
+	"inputs":{
+       "bucket":"mybucket",
+       "index":"field1_bin",
+       "start":"val2",
+       "end":"val4"
+   	},
+
+
+
+
 ```
 query using bucket "Foo";
 

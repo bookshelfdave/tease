@@ -12,7 +12,10 @@ public class Tease {
         TeaseLexer lexer = new TeaseLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         TeaseParser parser = new TeaseParser(tokens);
-        parser.query();
+        ParseTreeWalker walker = new ParseTreeWalker();
+        QuerySourceListener listener = new QuerySourceListener();
+        walker.walk(listener, parser.query());
+
         return false;
     }
 
@@ -40,12 +43,13 @@ public class Tease {
 
 
         String[] queries = {
-                "query using bucket \"Foo\";",
+               /* "query using bucket \"Foo\";",
 
                 "query using bucket \"Foo\" filter foo > 1;",
+                 */
 
                 "query using keys [\"Foo\", \"Bar\", \"Baz\"] filter foo > 1;",
-
+               /*
                 "query using bucket \"Foo\" filter foo > 1 and foo.@bar < 100;",
 
                 "query using bucket \"Foo\" \n" +
@@ -70,7 +74,9 @@ public class Tease {
                         "      extract $tempsum = foo.@bar;\n" +
                         "      aggregate sum = $tempsum \n" +
                         "             and x = foo.@bar;"
+                */
         };
+
         for(String query : queries) {
             testQuery(query);
         }

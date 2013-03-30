@@ -4,18 +4,18 @@ query: QUERY USING query_source filters? extract? aggregate? SEMI;
 
 /* query source */
 
-query_source: (query_source_bucket | query_source_keylist);
-                
-query_source_keylist: KEYS LSQUARE keylist? RSQUARE;
+query_source: (query_source_bucket);
 
-keylist: STRING (COMMA STRING)*;
-
-query_source_bucket: BUCKET bucketName=STRING query_index?;
+query_source_bucket: BUCKET bucketName=STRING (query_index | query_keylist)? ;
 
 query_index: WITH INDEX indexName=STRING ((FROM STRING TO STRING) | (VALUE STRING));
 
+query_keylist: KEYS LSQUARE keylist? RSQUARE;
+
+keylist: keys+=STRING (COMMA keys+=STRING)*;
 
 /* filtering */
+
 filters: FILTER filter (AND filter)*;
 
 filter: (obj predicate);
@@ -81,8 +81,13 @@ NOTEQEQ:       '!=';
 EQ:            '=';
 DOLLAR:        '$';
 ID          :       [a-z][A-Za-z_]*;
-INT         :       [0-9]+;
 
+INT             :   DIGIT+;
+fragment DIGIT  : '0' .. '9';
+
+FLOAT       :       [0-9]+ DOT [0-9]*
+                    | DOT [0-9]+
+                       ;
 
 STRING  :  '"' (ESC|.)*? '"';
 fragment ESC : '\\"' | '\\\\' ;

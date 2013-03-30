@@ -1,4 +1,4 @@
-// Generated from /Users/dparfitt/src/tease/src/main/java/org/metadave/tease/Tease.g4 by ANTLR 4.0
+// Generated from ./src/main/java/org/metadave/tease/Tease.g4 by ANTLR 4.0
 package org.metadave.tease;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -243,6 +243,8 @@ public class TeaseParser extends Parser {
 	}
 
 	public static class KeylistContext extends ParserRuleContext {
+		public Token STRING;
+		public List<Token> keys = new ArrayList<Token>();
 		public TerminalNode COMMA(int i) {
 			return getToken(TeaseParser.COMMA, i);
 		}
@@ -272,7 +274,8 @@ public class TeaseParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(63); match(STRING);
+			setState(63); ((KeylistContext)_localctx).STRING = match(STRING);
+			((KeylistContext)_localctx).keys.add(((KeylistContext)_localctx).STRING);
 			setState(68);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -280,7 +283,8 @@ public class TeaseParser extends Parser {
 				{
 				{
 				setState(64); match(COMMA);
-				setState(65); match(STRING);
+				setState(65); ((KeylistContext)_localctx).STRING = match(STRING);
+				((KeylistContext)_localctx).keys.add(((KeylistContext)_localctx).STRING);
 				}
 				}
 				setState(70);

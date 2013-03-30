@@ -1,4 +1,4 @@
-// Generated from /Users/dparfitt/src/tease/src/main/java/org/metadave/tease/Tease.g4 by ANTLR 4.0
+// Generated from ./src/main/java/org/metadave/tease/Tease.g4 by ANTLR 4.0
 package org.metadave.tease;
 import org.antlr.v4.runtime.tree.*;
 import org.antlr.v4.runtime.Token;
