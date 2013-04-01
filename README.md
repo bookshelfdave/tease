@@ -1,11 +1,14 @@
-tease
+Tease
 =====
+**T**ranslated **E**rlang **A**s **A** **S**econd **E**ncoding
 
 [Grammar](https://raw.github.com/metadave/tease/master/src/main/java/org/metadave/tease/Tease.g4)
 
 [Parser tests](https://github.com/metadave/tease/blob/master/src/main/java/org/metadave/tease/Tease.java)
 
 # Sample M/R queries
+
+Note: these sample queries are already out of date :-(
 
 ```
 query using bucket "Foo";
