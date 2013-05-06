@@ -1,6 +1,6 @@
 Tease
 =====
-**T**ranslated **E**rlang **A**s A **S**econd **E**ncoding
+**T**ranslated **E**rlang **A**s a **S**econd **E**ncoding
 
 [Grammar](https://raw.github.com/metadave/tease/master/src/main/java/org/metadave/tease/Tease.g4)
 
